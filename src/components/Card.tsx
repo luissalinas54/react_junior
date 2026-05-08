@@ -12,10 +12,10 @@ function Card(props: Props){
   
   const {children} = props;
   return (
-    <div 
     //definimos el estilo del componente utilizando la propiedad style, 
     // que recibe un objeto con las propiedades CSS que queremos aplicar al componente. 
     // En este caso, estamos definiendo un ancho de 350px para la tarjeta.
+    <div 
       className="card" 
       style={{
         width : "350px"
@@ -43,7 +43,6 @@ export function CardBody(props: CardBodyProps){
       <p className="card-text">
         {text}
       </p>
-     
     </>
   );
 }
