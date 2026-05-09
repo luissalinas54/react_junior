@@ -1,16 +1,21 @@
-import Card, {CardBody} from "./components/Card"
-import List from "./components/List"
+import Card, { CardBody } from "./components/Card";
+import List from "./components/List";
 
 function App() {
+  const list = ["gato", "perro", "conejo", "hamster", "pez"];
 
-   const list = ["gato", "perro", "conejo", "hamster", "pez"];
-
-   return (
-      <Card>
-         <CardBody title="Este es el titulo" text="Este es el contenido de la tarjeta que vamos a utilizar" />
-         <List data = {list} />   
-      </Card>
- );
+  const handleSelect = (elemento: string) => {
+    console.log("Elemento seleccionado: ", elemento);
+  };
+  return (
+    <Card>
+      <CardBody
+        title="Este es el titulo"
+        text="Este es el contenido de la tarjeta que vamos a utilizar"
+      />
+      <List data={list} onSelect={handleSelect} />
+    </Card>
+  );
 }
 
 export default App;
