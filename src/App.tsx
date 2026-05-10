@@ -34,6 +34,7 @@ function App() {
   //     </Button>
   //   </Card>
   // );
+
   const [data, setData] = useState([
     "gato",
     "perro",
@@ -41,6 +42,10 @@ function App() {
     "hamster",
     "pez",
   ]);
+
+  const handleSelect = (elemento: string) => {
+    console.log("Elemento seleccionado: ", elemento);
+  };
 
   //Creamos la funcion para agaregar los elementos
   const addMinion = () => {
@@ -52,11 +57,17 @@ function App() {
     setData(data.slice(0, data.length - 1));
   };
 
+  const contenido = data.length ? (
+    <List data={data} onSelect={handleSelect} />
+  ) : (
+    <p>No hay elementos en la lista</p>
+  );
+
   return (
     <Card>
       <Button onClick={addMinion}>Agregar</Button>
       <Button onClick={delMinion}>Eliminar</Button>
-      <List data={data} />
+      {contenido}
     </Card>
   );
 }
