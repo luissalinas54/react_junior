@@ -2,8 +2,8 @@ import { type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  isLoading: boolean;
-  onClick?: () => void;
+  isLoading?: boolean;
+  onClick: () => void;
 };
 
 function Button({ children, isLoading, onClick }: Props) {
