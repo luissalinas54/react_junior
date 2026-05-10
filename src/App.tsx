@@ -1,7 +1,13 @@
 import Card, { CardBody } from "./components/Card";
 import List from "./components/List";
+import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
+  //CREAMOS LA FUNCION PARA VER EL ESTADO DEL BOTON
+  const [isLoading, setIsLoading] = useState(false);
+  const handleClick = () => setIsLoading(!isLoading);
+
   const list = ["gato", "perro", "conejo", "hamster", "pez"];
   //const list: string[] = [];
 
@@ -23,6 +29,9 @@ function App() {
         //text="Este es el contenido de la tarjeta que vamos a utilizar"
       />
       {contenido}
+      <Button isLoading={isLoading} onClick={handleClick}>
+        Hola Mundo
+      </Button>
     </Card>
   );
 }
